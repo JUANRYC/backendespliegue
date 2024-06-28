@@ -11,7 +11,7 @@ const app = express();// la constante app tendrá ahora todo el funcionamiento d
 //Configuraciones
 app.use(express.json());// método que ayuda a convertir el código para que el servidor pueda entender lo que viene del cliente.
 app.use(morgan('dev'));
-app.use(cors({origin:"http://localhost:4200"})); // método para comunicar con el cliente
+app.use(cors({origin:"*"})); // método para comunicar con el cliente [*: cualquier cliente en la nube
 //Rutas de nuestro servidor
 app.use("/api/usuarios",require ("./routes/usuario.routes"));
 app.use("/api/empleados",require ("./routes/empleado.routes"));
